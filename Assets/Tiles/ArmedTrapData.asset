@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfe14f494ebe4f46b3770c498e1934a, type: 3}
-  m_Name: GroundData
+  m_Script: {fileID: 11500000, guid: bdaa2e9ac6db76147a83021635fdb9d5, type: 3}
+  m_Name: ArmedTrapData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: dd5510ef2a6b20a419b8269171a47a33, type: 2}
+  - {fileID: 11400000, guid: 8df6fb33979fdec4187ca9d5624f94fe, type: 2}
   speedCost: 1
   isWalkable: 1
   isTrap: 0
+  trapState: 0

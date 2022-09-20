@@ -15,8 +15,8 @@ public class CollectableComponent : MonoBehaviour
             {
                 var manager = collision.gameObject.GetComponent<PlayerManager>();
                 manager.Score(_value);
-                Destroy(gameObject);
             }
         }
+        Destroy(gameObject);
     }
 }

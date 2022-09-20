@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,10 +14,52 @@ public class MapManager : MonoBehaviour
     private List<TileData> tileDatas;
 
     private Dictionary<TileBase, TileData> dataFromTiles;
-    [SerializeField] private TileBase[] trapTiles;    
+    [SerializeField] private List<TrapTileData> trapTiles;
+    private Dictionary<TrapState, TrapTileData> stateToTileData;
+    //[SerializeField] private TileBase[] trapTiles;
+
+    public bool IsDifferentTiles(Vector3Int position1, Vector3Int position2)
+    {
+        var cell1Bounds = map.GetBoundsLocal(position1);
+        var cell2Bounds = map.GetBoundsLocal(position2);
+        return cell1Bounds == cell2Bounds;
+    }
+
+    private IEnumerator TriggerTrap(Vector3Int position)
+    {
+        yield return new WaitForSeconds(.5f);
+        var tileBase = stateToTileData[TrapState.Triggered].tiles.First();
+        map.SetTile(position, tileBase);
+        yield return new WaitForSeconds(.5f);
+        tileBase = stateToTileData[TrapState.Deployed].tiles.First();
+
+        map.SetTile(position, tileBase);
+        yield return new WaitForSeconds(3f);
+        tileBase = stateToTileData[TrapState.Triggered].tiles.First();
+        map.SetTile(position, tileBase);
+        yield return new WaitForSeconds(.5f);
+        tileBase = stateToTileData[TrapState.Armed].tiles.First();
+        map.SetTile(position, tileBase);
+    }
+
+    public TileData SteppedOnTile(Vector3Int position, GameObject go)
+    {
+        
+        var tileBase = map.GetTile(position);
+        var tileData = dataFromTiles[tileBase];
+        if (tileData is TrapTileData trapTileData)
+        {
+            if (trapTileData.trapState == TrapState.Armed)
+                StartCoroutine(TriggerTrap(position));
+        }
+        return tileData;
+    }
 
     private void Awake()
     {
+        stateToTileData = trapTiles.ToDictionary(x => x.trapState);
+
+
         dataFromTiles = new Dictionary<TileBase, TileData>();
 
         foreach (var tileData in tileDatas)
@@ -27,29 +71,6 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    public IEnumerator TriggerTrap(Vector3Int position, int trapTile, float time)
-    {
-        if (trapTile == 1)
-        {
-            yield return new WaitForSeconds(time);
-            map.SetTile(position, trapTiles[1]);
-            StartCoroutine(TriggerTrap(position, 2, 1f));
-        }
-        else if (trapTile == 2)
-        {
-            yield return new WaitForSeconds(time);
-            map.SetTile(position, trapTiles[2]);
-            StartCoroutine(TriggerTrap(position, 0, 3f));
-        }
-        else if (trapTile == 0)
-        {
-            yield return new WaitForSeconds(time);
-            map.SetTile(position, trapTiles[1]);
-            yield return new WaitForSeconds(0.5f);
-            map.SetTile(position, trapTiles[0]);
-        }
-    }
-
     public TileData GetTileData(Vector3 position)
     {
         Vector3Int gridPosition = map.WorldToCell(position);
@@ -57,7 +78,6 @@ public class MapManager : MonoBehaviour
         TileBase checkedTile = map.GetTile(gridPosition);
         
         return dataFromTiles[checkedTile];
-        
     }
 
     void Update()

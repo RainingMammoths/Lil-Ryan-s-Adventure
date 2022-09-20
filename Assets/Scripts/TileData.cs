@@ -10,5 +10,4 @@ public class TileData : ScriptableObject
 
     public float speedCost; // Speed up, Slow Down
     public bool isWalkable; // Wall, Ground
-    public bool isTrap; // Trap
 }
