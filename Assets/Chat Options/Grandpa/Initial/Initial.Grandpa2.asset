@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deeef12cc6be1d4ea6d3b6c194ede5d, type: 3}
+  m_Name: Initial.Grandpa2
+  m_EditorClassIdentifier: 
+  Speaker: Grandpa
+  Message: Goodness gracious! What a nice young man you've become.\nIt's true. I
+    can't take care of my carrots like I used to... but enough about that. There's
+    something else I was meaning to ask of you.
+  Responses: []

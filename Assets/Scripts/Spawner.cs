@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner
 {
     [SerializeField] GameObject prefab;
-    [SerializeField] float time_to_spawn_max = 10,time_to_spawn = 0;
-    [SerializeField] int max_enemys = 5;
+    [SerializeField] float time_to_spawn_max = 10, time_to_spawn;
+    [SerializeField] int max_enemies = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,11 @@ public class Spawner : MonoBehaviour
         
     }
 
+    /*public  Clone()
+    {
+
+    }*/
+
     private void FixedUpdate()
     {
         if(time_to_spawn>0)
@@ -28,9 +33,9 @@ public class Spawner : MonoBehaviour
             {
                 int count = GameObject.FindGameObjectsWithTag("Enemy").Length; // dead enemies are not destroyed RN
                 //Debug.Log("Enemy count: " + count);
-                if(count < max_enemys)
+                if(count < max_enemies)
                 {
-                    Instantiate(prefab, transform.position,Quaternion.identity);
+                    //Instantiate(prefab, transform.position,Quaternion.identity);
                     time_to_spawn = time_to_spawn_max;
                 }
             }

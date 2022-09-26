@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    public GameObject go;
     [SerializeField] private MapManager mapManagerScript_;
     private HealthComponent healthScript_;
     public event EventHandler OnAttack;
@@ -40,7 +39,7 @@ public class Actor : MonoBehaviour
     protected virtual void Start()
     {
         healthScript_ = GetComponent<HealthComponent>();
-        healthScript_.OnDeath += Die;
+        if (healthScript_ != null) healthScript_.OnDeath += Die;
     }
 
     public IEnumerator Attack(Vector3 position, float time)

@@ -11,6 +11,7 @@ public class InputHandle : MonoBehaviour
     public Func<Vector2, Command> OnKeyA { get; set; }
     public Func<Vector2, Command> OnKeyD { get; set; }
     public event EventHandler OnMouseButtonLeftClick;
+    public event EventHandler OnEButtonClick;
     LinkedList<Command> commandsPast = new LinkedList<Command>();
     LinkedList<Command> commandsFuture = new LinkedList<Command>();
 
@@ -62,6 +63,11 @@ public class InputHandle : MonoBehaviour
             //Command c = new AttackCommand();
             //AddCommand(commandsPast, c);
             //c.Execute(gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            OnEButtonClick?.Invoke(this, EventArgs.Empty);
         }
 
         if (Input.GetKey(KeyCode.Space))
