@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Actor : MonoBehaviour
 {
-    [SerializeField] private MapManager mapManagerScript_;
+    private MapManager mapManagerScript_;
     private HealthComponent healthScript_;
     public event EventHandler OnAttack;
     public TileData CurrentTile { get; set; }
@@ -38,6 +39,7 @@ public class Actor : MonoBehaviour
 
     protected virtual void Start()
     {
+        mapManagerScript_ = MapManager.Instance;
         healthScript_ = GetComponent<HealthComponent>();
         if (healthScript_ != null) healthScript_.OnDeath += Die;
     }

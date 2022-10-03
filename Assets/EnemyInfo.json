@@ -1,0 +1,18 @@
+{
+	"prototypes":[
+	{
+		"ID":"Slime",
+		"Properties":{
+			"Health":"100",
+			"Speed":"3"
+		}
+	},
+	{
+		"ID":"Tank Slime",
+		"PrototypeID":"Slime",
+		"Properties":{
+			"Health":"300",
+			"Size":"1.5"
+		}
+	}]
+}

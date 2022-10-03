@@ -374,6 +374,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df6368f14c7a324480ae8e674c3a126, type: 3}
+--- !u!1 &1919088672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919088674}
+  - component: {fileID: 1919088673}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1919088673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919088672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ac1040ca1fee24885ac3fabd69e07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prototype: {fileID: 5009016712675386348, guid: 2c5e710226fbcdd4890a7f1601b83b65, type: 3}
+  time_to_spawn_max: 30
+  time_to_spawn: 0
+  max_enemies: 5
+  prototypeJSON_: "{ \t\"prototypes\":[ \t{ \t\t\"ID\":\"Slime\", \t\t\"Properties\":{
+    \t\t\t\"Health\":\"100\", \t\t\t\"Speed\":\"3\" \t\t} \t}, \t{ \t\t\"ID\":\"Tank
+    Slime\", \t\t\"PrototypeID\":\"Slime\", \t\t\"Properties\":{ \t\t\t\"Health\":\"300\",
+    \t\t\t\"Size\":\"1.5\" \t\t} \t}] }"
+  enemyToSpawnID: Tank Slime
+--- !u!4 &1919088674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919088672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.31, y: 5.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097009849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2606950177584240894, guid: 20d7a9bcd2035334f8f0d0d9af1de553, type: 3}
@@ -501,6 +553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2606950177584240895, guid: 20d7a9bcd2035334f8f0d0d9af1de553, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d7a9bcd2035334f8f0d0d9af1de553, type: 3}
 --- !u!1001 &2700135215531486959
@@ -574,6 +630,10 @@ PrefabInstance:
     - target: {fileID: 3085299308724051208, guid: 01a45c05700bba042b5a7990beed8fae, type: 3}
       propertyPath: m_Name
       value: Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085299308724051208, guid: 01a45c05700bba042b5a7990beed8fae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3085299308724051210, guid: 01a45c05700bba042b5a7990beed8fae, type: 3}
       propertyPath: m_RootOrder
@@ -676,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slime_0
       objectReference: {fileID: 0}
+    - target: {fileID: 5009016712675386348, guid: 2c5e710226fbcdd4890a7f1601b83b65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5e710226fbcdd4890a7f1601b83b65, type: 3}
 --- !u!1001 &5578429661205212057
@@ -704,6 +768,10 @@ PrefabInstance:
     - target: {fileID: 5578429662042380837, guid: 116815f209c49e443950446376b1ed3f, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578429662042380837, guid: 116815f209c49e443950446376b1ed3f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5578429662042380839, guid: 116815f209c49e443950446376b1ed3f, type: 3}
       propertyPath: m_RootOrder
