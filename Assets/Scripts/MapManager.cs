@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 public class MapManager : MonoBehaviour
 {
     public static MapManager Instance { get; private set;}
+
     [SerializeField]
     private Tilemap map;
 
@@ -66,6 +67,7 @@ public class MapManager : MonoBehaviour
         {
             Instance = this;
         }
+
         stateToTileData = trapTiles.ToDictionary(x => x.trapState);
         dataFromTiles = new Dictionary<TileBase, TileData>();
 

@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour, IClonableMonoBehaviour
+public class HealthComponent : MonoBehaviour 
 {
     [SerializeField] [Header("How much health this object has?")] private int health;
     private bool isInvincible;
@@ -16,8 +16,6 @@ public class HealthComponent : MonoBehaviour, IClonableMonoBehaviour
         get => health;
         set => health = value;
     }
-
-    
 
     private void Start()
     {
@@ -51,17 +49,5 @@ public class HealthComponent : MonoBehaviour, IClonableMonoBehaviour
     {
         yield return new WaitForSeconds(time);
         isInvincible = state;
-    }
-
-    public IClonableMonoBehaviour Clone()
-    {
-        var healthScript = new HealthComponent();
-        healthScript.Health = Health;
-        return healthScript;
-    }
-
-    public MonoBehaviour GetThis()
-    {
-        return this;
     }
 }

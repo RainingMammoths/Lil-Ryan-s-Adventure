@@ -8,17 +8,30 @@ public class DialogueComponent : MonoBehaviour
     [SerializeField] private List<ChatOption> chatOptions = new List<ChatOption>();
     private GameObject canvas;
 
-    public void Dialogue(int option, GameObject go)
+    public void Dialogue(GameObject go)
     {
-        Debug.Log("talking");
-        if (chatOptions[option].Condition?.IsConditionMet(go) != false)
+        int i = 1;
+        foreach (ChatOption chatOption in chatOptions)
         {
-            GameObject textGO = new GameObject(chatOptions[option].Speaker + option);
-            textGO.transform.SetParent(canvas.transform);
-            //var displayedText = canvas.AddComponent<Text>();
-            //displayedText.text = chatOptions[option].Message;
-            //displayedText.transform.position = new Vector3(1f, 1f, 0f);
+            if (chatOption.Condition?.IsConditionMet(go) != false)
+            {
+                DisplayChat(chatOption, 10 * i);
+                i++;
+            }
         }
+    }
+
+    private void DisplayChat(ChatOption option, float posY)
+    {
+        GameObject textGO = new GameObject(option.Speaker, typeof(RectTransform));
+        RectTransform rect = textGO.transform as RectTransform;
+        //rect.sizeDelta(100f, 20);
+        textGO.AddComponent<CanvasRenderer>();
+        var displayedText = textGO.AddComponent<Text>();
+        textGO.transform.SetParent(canvas.transform);
+        displayedText.text = option.Message;
+        displayedText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        displayedText.transform.position = new Vector3(100f, posY, 0f);
     }
 
     // Start is called before the first frame update

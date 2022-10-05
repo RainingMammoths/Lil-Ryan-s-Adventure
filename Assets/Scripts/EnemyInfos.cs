@@ -9,7 +9,6 @@ namespace Assets.Scripts
     [Serializable]
     public class EnemyInfos
     {
-        public List<EnemyInfo> Prototypes { get; set; } 
-
+        public List<EnemyInfo> Prototypes { get; set; }
     }
 }

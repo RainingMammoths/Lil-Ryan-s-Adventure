@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Interfaces
 {
-    public interface IClonableMonoBehaviour
+    public interface IComponentPrototypeProperties
     {
-        IClonableMonoBehaviour Clone();
-        MonoBehaviour GetThis();
+        void ModifyComponent(GameObject go);
+        IComponentPrototypeProperties Clone();
     }
 }

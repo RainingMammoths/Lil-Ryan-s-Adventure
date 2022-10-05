@@ -38,10 +38,9 @@ public class Player : Actor
         var results = Physics2D.Raycast(transform.position, direction, dialogueDistance,layerMask_);
         if (results.collider != null)
         {
-            Debug.Log(results.transform.gameObject);
-            Debug.Log(direction.magnitude);
+            //Debug.Log(results.transform.gameObject);
             var dialogueScript = results.collider?.gameObject?.GetComponent<DialogueComponent>();
-            dialogueScript.Dialogue(0, gameObject);
+            dialogueScript.Dialogue(gameObject);
             Debug.DrawLine(transform.position, worldMousePosition, Color.red, 5f);
         }
         else

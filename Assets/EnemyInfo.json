@@ -1,18 +1,30 @@
 {
 	"prototypes":[
 	{
-		"ID":"Slime",
-		"Properties":{
-			"Health":"100",
-			"Speed":"3"
-		}
-	},
-	{
 		"ID":"Tank Slime",
 		"PrototypeID":"Slime",
 		"Properties":{
-			"Health":"300",
-			"Size":"1.5"
+			"Health": {
+				"MinValue":300,
+				"MaxValue":500
+			},
+			"Speed": {
+				"MinValue":1,
+				"MaxValue":2
+			},
+		}
+	},
+	{
+		"ID":"Slime",
+		"Properties":{
+			"Health": {
+				"MinValue":100,
+				"MaxValue":200
+			},
+			"Speed": {
+				"MinValue":3,
+				"MaxValue":4
+			},
 		}
 	}]
 }
