@@ -18,19 +18,27 @@ public class Player : Actor
         inputScript_ = GetComponent<InputHandle>();
         visualComponentScript_ = GetComponent<VisualComponent>();
         inputScript_.OnMouseButtonLeftClick += OnMouseButtonLeftClick;
-        inputScript_.OnEButtonClick += OnInteract;
+
+
+
+        //inputScript_.OnEButtonClick += OnInteract;
+        //AddObserver(inputScript_.UseObserver);
+
+
+
         inputScript_.OnKeyW = CreateMoveCommand;
         inputScript_.OnKeyA = CreateMoveCommand;
         inputScript_.OnKeyS = CreateMoveCommand;
         inputScript_.OnKeyD = CreateMoveCommand;
     }
 
-    protected override void OnHit()
+    protected override void OnGetHit()
     {
+        //Notify(this, EVENT.GET_HIT);
         StartCoroutine(visualComponentScript_.BlinkAlpha(0, .75f));
     }
 
-    protected void OnInteract(object sender, System.EventArgs e)
+    protected void OnUse()
     {
         // Check for NPCs
         var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -48,6 +56,7 @@ public class Player : Actor
             Debug.DrawLine(transform.position, worldMousePosition, Color.blue, 5f);
         }
         // check for items
+        // Checking for items...
     }
 
     private Command CreateMoveCommand(Vector2 direction)

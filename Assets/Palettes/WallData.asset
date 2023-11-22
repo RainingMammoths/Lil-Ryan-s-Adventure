@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfe14f494ebe4f46b3770c498e1934a, type: 3}
+  m_Name: WallData
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: c4ccdd38867745246a62bcf5beb852b2, type: 2}
+  - {fileID: 11400000, guid: ab2a4c17a4fedf34ba7d682e5f5f20eb, type: 2}
+  - {fileID: 11400000, guid: 998ffed77e15be740815f19fb4df7a16, type: 2}
+  - {fileID: 11400000, guid: 564f46a9e26c3d24c8e299d1b4dfe7da, type: 2}
+  - {fileID: 11400000, guid: 5c8ae8a58b868d54eb52c6c6dfb09376, type: 2}
+  - {fileID: 11400000, guid: f2e464ae0de1136489b774ac10838f54, type: 2}
+  - {fileID: 11400000, guid: 5512d0f752e8a4c409f2bbb28c412e04, type: 2}
+  - {fileID: 11400000, guid: 69cd33cb0d2cf024db120520d4ded03f, type: 2}
+  - {fileID: 11400000, guid: 64769887df3bdfb44a11fe4a8cacc054, type: 2}
+  - {fileID: 11400000, guid: 7da74ad183493794c965ba6a2b0bc44b, type: 2}
+  - {fileID: 11400000, guid: a5e94cb849cf4b347bc276e969291dae, type: 2}
+  - {fileID: 11400000, guid: f75b5ed1e636f7c449703501e8b92673, type: 2}
+  - {fileID: 11400000, guid: 1efad5cb843349b4f9c4ea88c66db36a, type: 2}
+  - {fileID: 11400000, guid: b25b1f9150b412f47980d12ef35a927e, type: 2}
+  - {fileID: 11400000, guid: e84b8909ce68531418b814c867a54cc5, type: 2}
+  - {fileID: 11400000, guid: 1af9667c15981134fa6dd28c65dc880e, type: 2}
+  - {fileID: 11400000, guid: 1e7ee75f8969d144d90829b2cef0cf8d, type: 2}
+  - {fileID: 11400000, guid: c1ff7cb937d35054483ef1d2d108ab3a, type: 2}
+  - {fileID: 11400000, guid: 70b9258f44ed3864bb1b9023c2d7a53d, type: 2}
+  - {fileID: 11400000, guid: 743c32e4de041d3449bedb9c4699ddb5, type: 2}
+  - {fileID: 11400000, guid: 9a2d1b81b748d684bae36806f55fa86d, type: 2}
+  - {fileID: 11400000, guid: 62abaad834da20e49aee19ab3aeaa10e, type: 2}
+  - {fileID: 11400000, guid: f71bdc00c1d6a434c87a7b80881e6a5e, type: 2}
+  - {fileID: 11400000, guid: b0412fe13b2764945abbd93bbc6a2511, type: 2}
+  - {fileID: 11400000, guid: b7a5f3f3de4521243a61ef954516e672, type: 2}
+  - {fileID: 11400000, guid: 3c974f9ad498bd7479a49943b74d3e07, type: 2}
+  - {fileID: 11400000, guid: 9551a1924e1ffd44795933480317b6d1, type: 2}
+  - {fileID: 11400000, guid: 020711a537e29784180df335b34d4bcb, type: 2}
+  - {fileID: 11400000, guid: 4069461d2de42ab498c99db24b086af7, type: 2}
+  - {fileID: 11400000, guid: b4d4eae05d6a47145b7adadb47b0101a, type: 2}
+  - {fileID: 11400000, guid: 7f2149ef846acc2429043abf9992fde7, type: 2}
+  - {fileID: 11400000, guid: db0b1df0f001d0e41877ce2a33b60a31, type: 2}
+  - {fileID: 11400000, guid: 5cb857df38c860b48894b45b8075a017, type: 2}
+  - {fileID: 11400000, guid: 19c3f6d7369d3d549b57623e4de4e6b8, type: 2}
+  - {fileID: 11400000, guid: a9bb5e8e6e0b88a4388952382f12abca, type: 2}
+  - {fileID: 11400000, guid: 21bba13895ee75343823b0744bf75f7b, type: 2}
+  - {fileID: 11400000, guid: a2291384eb1c1f543831b5af8b097286, type: 2}
+  - {fileID: 11400000, guid: 8813db184df5a0f4a961e3ccc1881231, type: 2}
+  - {fileID: 11400000, guid: 27591e0431e17a349be3632561cb1dcb, type: 2}
+  - {fileID: 11400000, guid: 063677626aa95e44cb5fd615b2cfe2d3, type: 2}
+  - {fileID: 11400000, guid: 3be4b8690368ffd4393d9c7c9f7ae18b, type: 2}
+  - {fileID: 11400000, guid: d59e03b54ba1a1e48bc0c9b627d9a3a0, type: 2}
+  - {fileID: 11400000, guid: 357aa8de64ad6dd4882a887ad33c0980, type: 2}
+  - {fileID: 11400000, guid: d5afef7bea24bb046a9cab7cd664649e, type: 2}
+  - {fileID: 11400000, guid: 24d1f1413917f894e8eff0454d95aacb, type: 2}
+  - {fileID: 11400000, guid: 2dc5c74e04475e44a9969b44c0b119d7, type: 2}
+  - {fileID: 11400000, guid: e444cbe39b7cb334bae452c32ef7bd81, type: 2}
+  - {fileID: 11400000, guid: 2febad0a236dfbb42b095919fa656be0, type: 2}
+  - {fileID: 11400000, guid: 4a869274654295441a2f5b2886a349e5, type: 2}
+  - {fileID: 11400000, guid: 87bc99c2c21811a4ead26fb7a723ac19, type: 2}
+  speedCost: 0
+  isWalkable: 0

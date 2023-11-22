@@ -12,16 +12,16 @@ namespace Assets.Scripts.ComponentPrototypeProperties
     {
         public float MinValue { get; set; }
         public float MaxValue { get; set; }
+        public IComponentPrototypeProperties Clone()
+        {
+            return new MovementComponentPrototypeProperties { MinValue = MinValue, MaxValue = MaxValue };
+        }
+
         public void ModifyComponent(GameObject go)
         {
             float randomFloat = UnityEngine.Random.Range(MinValue, MaxValue);
             var movementComponent = go.AddComponent<MovementComponent>();
             movementComponent.Speed = randomFloat;
-        }
-
-        public IComponentPrototypeProperties Clone()
-        {
-            return new MovementComponentPrototypeProperties { MinValue = MinValue, MaxValue = MaxValue };
         }
     }
 }

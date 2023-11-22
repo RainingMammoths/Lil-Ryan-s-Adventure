@@ -1,8 +1,17 @@
+using Assets.Scripts.StateMachineV2.StateMachines;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum EVENT
+{
+    START = 0,
+    INTERACT = 1,
+    MOVETILE = 2,
+    GET_HIT = 3,
+    HIT = 4,
+    DIE = 5
+}
 
 public class Actor : MonoBehaviour
 {
@@ -10,6 +19,8 @@ public class Actor : MonoBehaviour
     private HealthComponent healthScript_;
     public event EventHandler OnAttack;
     public TileData CurrentTile { get; set; }
+
+    [SerializeField] private ActorStateMachine actorStateMachine;
 
     private void FixedUpdate()
     {
@@ -30,17 +41,15 @@ public class Actor : MonoBehaviour
         if (isHit)
         {
             healthScript_.AddHealth(-25);
-            OnHit();
+            OnGetHit();
         }
     }
-
-
-    //public Vector3 direction;
 
     protected virtual void Start()
     {
         mapManagerScript_ = MapManager.Instance;
         healthScript_ = GetComponent<HealthComponent>();
+
         if (healthScript_ != null) healthScript_.OnDeath += Die;
     }
 
@@ -52,14 +61,16 @@ public class Actor : MonoBehaviour
         // Do a check for collision with objects to be hit
     }
 
+
+
     protected virtual void Die(object sender, System.EventArgs e)
     {
         Destroy(gameObject);
     }
 
-    protected virtual void OnHit()
+    protected virtual void OnGetHit()
     {
-        
+        //Notify(this, EVENT.GET_HIT);
     }
 
     public void Move(Vector2 direction, float speed)

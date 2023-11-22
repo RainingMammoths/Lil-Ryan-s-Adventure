@@ -1,3 +1,4 @@
+using Assets.Scripts.States;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,17 +8,16 @@ using UnityEngine.Tilemaps;
 
 public class MapManager : MonoBehaviour
 {
-    public static MapManager Instance { get; private set;}
-
-    [SerializeField]
-    private Tilemap map;
+    public static MapManager Instance { get; private set; }
+    public TrapTileStateMachine trapTileStateMachine;
+    public Tilemap map;
 
     [SerializeField]
     private List<TileData> tileDatas;
 
     private Dictionary<TileBase, TileData> dataFromTiles;
     [SerializeField] private List<TrapTileData> trapTiles;
-    private Dictionary<TrapState, TrapTileData> stateToTileData;
+    public Dictionary<TrapState, TrapTileData> stateToTileData;
     //[SerializeField] private TileBase[] trapTiles;
 
     public bool IsDifferentTiles(Vector3Int position1, Vector3Int position2)
@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
         return cell1Bounds == cell2Bounds;
     }
 
-    private IEnumerator TriggerTrap(Vector3Int position)
+    /*private IEnumerator TriggerTrap(Vector3Int position)
     {
         yield return new WaitForSeconds(.5f);
         var tileBase = stateToTileData[TrapState.Triggered].tiles.First();
@@ -42,7 +42,7 @@ public class MapManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         tileBase = stateToTileData[TrapState.Armed].tiles.First();
         map.SetTile(position, tileBase);
-    }
+    }*/
 
     public TileData SteppedOnTile(Vector3Int position, GameObject go)
     {
@@ -52,7 +52,9 @@ public class MapManager : MonoBehaviour
         if (tileData is TrapTileData trapTileData)
         {
             if (trapTileData.trapState == TrapState.Armed)
-                StartCoroutine(TriggerTrap(position));
+                trapTileStateMachine.PerformAction<TriggerStateAction>(new TrapTileArgs { Position = position });
+                //StartCoroutine(TriggerTrap(position));
+
         }
         return tileData;
     }

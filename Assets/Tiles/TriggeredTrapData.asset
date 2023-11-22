@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: TriggeredTrapData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 064f15db545e46849adf44342eaac780, type: 2}
+  - {fileID: 11400000, guid: 2112e526df12b7f4aa74206ea74b0253, type: 2}
   speedCost: 1
   isWalkable: 1
-  isTrap: 1
   trapState: 1

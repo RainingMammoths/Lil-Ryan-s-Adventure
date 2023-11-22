@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: DeployedTrapData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: f09d5272a3dc4a44da24c5e77efb950c, type: 2}
+  - {fileID: 11400000, guid: b93a1307a2411cd4a8aadf085019225c, type: 2}
   speedCost: 1
   isWalkable: 1
-  isTrap: 1
   trapState: 2

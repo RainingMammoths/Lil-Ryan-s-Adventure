@@ -8,7 +8,7 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] [Header("How much health this object has?")] private int health;
     private bool isInvincible;
-    [SerializeField] [Header("Can this entity be invincible?")] private bool canBeInvincible;
+    [SerializeField] [Header("Entity gets temporary invincibility on-hit?")] private bool canBeInvincible;
     public event EventHandler OnDeath;
 
     public int Health

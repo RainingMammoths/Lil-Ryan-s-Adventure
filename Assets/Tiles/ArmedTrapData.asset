@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: ArmedTrapData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 8df6fb33979fdec4187ca9d5624f94fe, type: 2}
+  - {fileID: 11400000, guid: 533cefac4df47a440919b9ee9114a740, type: 2}
   speedCost: 1
   isWalkable: 1
-  isTrap: 0
   trapState: 0

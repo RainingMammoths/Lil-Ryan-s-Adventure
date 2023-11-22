@@ -30,6 +30,10 @@ namespace Assets.Scripts
                             var speed = serializer.Deserialize<MovementComponentPrototypeProperties>(reader);
                             result[componentName] = speed;
                             break;
+                        case "Size":
+                            var size = serializer.Deserialize<SizePrototypeProperties>(reader);
+                            result[componentName] = size;
+                            break;
                     }
                 }
                 reader.Read();
